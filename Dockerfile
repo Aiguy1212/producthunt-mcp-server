@@ -35,5 +35,5 @@ USER mcp_user
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
   CMD python -c "import sys; sys.exit(0 if 'PRODUCT_HUNT_TOKEN' in __import__('os').environ else 1)"
 
-# Run the installed script
-CMD ["product-hunt-mcp"]
+# Run the HTTP server for Fly.io
+CMD ["product-hunt-mcp-http"]
